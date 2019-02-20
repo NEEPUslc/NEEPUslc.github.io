@@ -1,0 +1,158 @@
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>NEEPU-SIEMENS-LEARNING-CLUB</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 引入 Bootstrap -->
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ 
+      <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+      <style>
+       .tou {
+          width:100%;
+           background:url(tou.jpg);
+       }
+       .ximenzi {
+          width:100%;
+           background:url(6.jpg);
+       }
+       h1 {color:white;}
+       
+      </style>
+     <style>
+       img{display:none;}
+     </style>
+     <script>
+          var index=1;//当前显示的图片索引(1-5)
+          var timer;
+          function switchImg(){
+          // 当前这一张隐藏
+          document.getElementById("img"+index).style.display="none";
+
+          // 如果当前显示的图片索引没有到最大值就继续增加
+          if(index<5){index++;}
+          // 否则从第一个图片开始显示，索引从0开始
+          else{index=1;}
+          // 显示第index张
+          document.getElementById("img"+index).style.display="block";
+
+          // 下一秒,再执行本方法
+          timer = window.setTimeout("switchImg()",2000);
+          }
+
+      </script>
+   </head>
+   <body style="background: white"  onload="switchImg()">
+     <div class="jumbotron text-center tou" style="margin-bottom:0;background-size:cover">
+       
+       <h1 style="color: white">NEEPU SIEMENS LEARNING CLUB</h1>
+       
+       </div>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#">Home page</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              
+              <li><a href="#">Development history</a></li>
+              <li><a href="#">The match and competition</a></li>
+              <li><a href="#">Scientific research</a></li>
+              <li><a href="#">Teacher's remarks</a></li>
+              <li><a href="#">Senior talent</a></li>
+
+            </ul> 
+            <ul class="nav navbar-nav navbar-right hidden-sm">
+              <li><a href="#">Join us</a></li>
+            </ul>
+
+
+          </div>
+        </div>
+      </nav>
+     
+         
+    
+      
+        <div class="row ximenzi" style="width:100%;height:500px;margin-bottom:20px;background-size:cover">
+          <div class="col-sm-4">
+            <div style="margin-top:180px">
+               <center>
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label for="firstname" class="col-sm-2 control-label"; style="color:black ">Account</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="firstname" 
+                           placeholder="Please enter the account number">
+                    </div>
+                  </div>
+                 
+                  <div class="form-group">
+                    <label for="lastname" class="col-sm-2 control-label"; style="color:black">Password</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="lastname" 
+                           placeholder="Please enter your password">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <div class="checkbox">
+                        <label style="color:black">
+                          <input type="checkbox"> Please Remember Me
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-default">Register</button>
+                    </div>
+                  </div>
+                </form>
+                </center>
+              </div>
+          </div>
+
+          <div class="col-sm-8">
+           <!--放五张图,构造一个ImageList-->
+            <div style="border:0px solid black;width:100%;height:500px;background-size:cover">
+            <img id="img1" src="1.jpg" style="position: absolute; width: 100%; height: 100%;  left:0;">
+            <img id="img2" src="2.jpg" style="position: absolute; width: 100%; height: 100%; left:0;">
+            <img id="img3" src="3.jpg" style="position: absolute; width: 100%; height: 100%;  left:0;">
+            <img id="img4" src="4.jpg" style="position: absolute; width: 100%; height: 100%;  left:0;">
+            <img id="img5" src="5.jpg" style="position: absolute; width: 100%; height: 100%;  left:0;">
+            </div>
+            <div id="btn1" onclick="manuImg()"></div>
+            <div id="btn2"></div>
+            <div id="btn3"></div>
+            <div id="btn4"></div>
+            <div id="btn5"></div> 
+          </div>
+        </div>
+      
+
+      <div class="jumbotron text-center" style="margin-bottom:0px">
+        <p><a href="#">Communication group of modeling and simulation laboratory；QQ1234567</a></p>
+      </div>
+            
+ 
+      <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <!-- 包括所有已编译的插件 -->
+      <script src="js/bootstrap.min.js"></script>
+   </body>
+</html>
